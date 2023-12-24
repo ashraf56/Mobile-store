@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Mobilecard from "./Mobilecard";
+import Search from "./Search";
 function App() {
   const [mobiles, setmobile] = useState([]);
   const [search, setSearch] = useState("");
@@ -56,14 +57,8 @@ function App() {
   return (
     <>
       {/* "default search feild" */}
-      <div className="mx-auto w-full text-center mt-4 py-5 ">
-        <input
-          type="text"
-          className="input input-bordered rounded-xl input-info w-full max-w-xs"
-          placeholder="search by name"
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </div>
+     <Search setSearch={setSearch}  ></Search>
+
       <div className="">
         <div className=" flex  gap-3 text-center justify-center">
           <div className=" rounded-xl shadow-md ">
@@ -138,7 +133,7 @@ function App() {
           </div>
         </div>
         <div>
-          <div className="grid grid-cols-3 gap-3 mx-5 px-5 justify-center text-center container">
+          <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-3 mx-5 px-5 justify-center container">
             {filterMobile.map((m) => (
               <Mobilecard m={m} key={m.id}></Mobilecard>
             ))}
