@@ -1,14 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Mobilecard from "./Mobilecard";
 import Search from "./Search";
+import { Contextapi } from "./AllContext/AllContext";
 function App() {
   const [mobiles, setmobile] = useState([]);
-  const [search, setSearch] = useState("");
-  const [selectedProcessor, setSelectedProcessor] = useState("");
-  const [selectedmemory, setSelectedmemory] = useState("");
-  const [selectedOS, setSelectedOS] = useState("");
-  const [selectedType, setSelectedType] = useState("");
-  const [selectedPriceRange, setSelectedPriceRange] = useState("");
+ 
+ const { search, selectedOS,selectedProcessor,selectedPriceRange,selectedType,selectedmemory,handleMemoryChange,handleOSChange,handlePriceRangeChange,handleProcessorChange,handleTypeChange}=useContext(Contextapi)
+
   useEffect(() => {
     fetch("https://mobile-store-server.onrender.com/user")
       .then((res) => res.json())
@@ -17,21 +15,7 @@ function App() {
         setmobile(data);
       });
   }, []);
-  const handleProcessorChange = (processor) => {
-    setSelectedProcessor(processor);
-  };
-  const handleMemoryChange = (memory) => {
-    setSelectedmemory(memory);
-  };
-  const handleOSChange = (OS) => {
-    setSelectedOS(OS);
-  };
-  const handleTypeChange = (type) => {
-    setSelectedType(type);
-  };
-  const handlePriceRangeChange = (priceRange) => {
-    setSelectedPriceRange(priceRange);
-  };
+ 
 
   //  filter operation
   let fltermobile = ((m) => {
@@ -57,7 +41,7 @@ function App() {
   return (
     <>
       {/* "default search feild" */}
-      <Search setSearch={setSearch}  ></Search>
+      <Search ></Search>
 
       <div className="">
         <div className=" md:flex  gap-3 text-center justify-center">
@@ -132,6 +116,7 @@ function App() {
             </select>
           </div>
         </div>
+        {/* all Mobiles Data */}
         <div>
           <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-3 mx-auto px-5 py-10 justify-center container">
             {filterMobile.map((m) => (

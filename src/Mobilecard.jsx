@@ -14,6 +14,7 @@ const Mobilecard = ({m}) => {
                 <h1 className=" font-semibold">  {m.memory}</h1>
                 <h1 className="  font-semibold">  {m.os}</h1>
                 <h1 className=" font-semibold ">  {m.type}</h1>
+                <button className='btn btn-ghost font-bold'>Buy now</button>
                 </div>
               
               </div>

@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Contextapi } from './AllContext/AllContext';
 
-const Search = ({setSearch}) => {
+const Search = () => {
+  const {setSearch}=useContext(Contextapi)
     return (
         <div>
              <div className="mx-auto w-full text-center mt-4 py-5 ">
