@@ -57,10 +57,10 @@ function App() {
   return (
     <>
       {/* "default search feild" */}
-     <Search setSearch={setSearch}  ></Search>
+      <Search setSearch={setSearch}  ></Search>
 
       <div className="">
-        <div className=" flex  gap-3 text-center justify-center">
+        <div className=" md:flex  gap-3 text-center justify-center">
           <div className=" rounded-xl shadow-md ">
             <select
               className="select select-info w-full max-w-xs  "
@@ -133,7 +133,7 @@ function App() {
           </div>
         </div>
         <div>
-          <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-3 mx-5 px-5 justify-center container">
+          <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-3 mx-auto px-5 py-10 justify-center container">
             {filterMobile.map((m) => (
               <Mobilecard m={m} key={m.id}></Mobilecard>
             ))}
