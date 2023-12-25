@@ -34,19 +34,15 @@ function App() {
   const filterMobile = mobiles.filter(fltermobile)
   return (
     <>
-    <Topnav></Topnav>
+      <Topnav></Topnav>
       {/* "default search feild" */}
-    <Header></Header>
-
+      <Header></Header>
       <div>
-        {/* All filter option */}
-       
-
         {/* all Mobiles Data */}
         <div>
           <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-3 mx-auto px-5 py-10 justify-center container">
-            { !filterMobile.length === 0 ? <span className="loading loading-ring loading-lg"></span> : filterMobile.map((m) => (
-              <Mobilecard  m={m} key={m.id}></Mobilecard>
+            {!filterMobile.length === 0 ? <span className="loading loading-ring loading-lg"></span> : filterMobile.map((m) => (
+              <Mobilecard m={m} key={m.id}></Mobilecard>
             ))}
           </div>
         </div> </div>
