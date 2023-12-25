@@ -1,7 +1,6 @@
 # Mobile store
 
 
-Brief project description.
 
 ## Prerequisites
 - Node.js 
@@ -13,14 +12,24 @@ Brief project description.
 - Any  user can search phone using Filter option. 
 
 
+## technology Used
+- React js, Vite, Tailwind CSS, DaisyUI, Node js
+
+
+## Backend Code 
+- https://github.com/ashraf56/Mobile-store-server
+
+
 ## Installation
 
-1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/your-project.git
+   git clone https://github.com/ashraf56/Mobile-store.git 
 
    cd your-project
 
-   npm install   # or yarn install
+   npm install   ll
 
-   npm run dev   # or yarn dev
+   npm run dev    
+
+
+
