@@ -3,20 +3,13 @@ import Mobilecard from "./Mobilecard";
 import Search from "./Search";
 import { Contextapi } from "./AllContext/AllContext";
 import Allfilter from "./Allfilter";
+import Header from "./Header";
+import getMobiledata from "./Util/getMobiledata";
+import Topnav from "./Topnav";
 function App() {
-  const [mobiles, setmobile] = useState([]);
-
+  //get Mobile data from getMobiledata
+  const [mobiles] = getMobiledata()
   const { search, selectedOS, selectedProcessor, selectedPriceRange, selectedType, selectedmemory } = useContext(Contextapi)
-
-  useEffect(() => {
-    fetch("https://mobile-store-server.onrender.com/user")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setmobile(data);
-      });
-  }, []);
-
 
   //  filter operation
   let fltermobile = ((m) => {
@@ -41,18 +34,19 @@ function App() {
   const filterMobile = mobiles.filter(fltermobile)
   return (
     <>
+    <Topnav></Topnav>
       {/* "default search feild" */}
-      <Search ></Search>
+    <Header></Header>
 
       <div>
         {/* All filter option */}
-        <Allfilter mobiles={mobiles} ></Allfilter>
+       
 
         {/* all Mobiles Data */}
         <div>
           <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-3 mx-auto px-5 py-10 justify-center container">
-            {filterMobile.map((m) => (
-              <Mobilecard m={m} key={m.id}></Mobilecard>
+            { !filterMobile.length === 0 ? <span className="loading loading-ring loading-lg"></span> : filterMobile.map((m) => (
+              <Mobilecard  m={m} key={m.id}></Mobilecard>
             ))}
           </div>
         </div> </div>

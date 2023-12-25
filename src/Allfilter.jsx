@@ -1,23 +1,24 @@
 import React, { useContext } from 'react';
 import { Contextapi } from './AllContext/AllContext';
+import getMobiledata from './Util/getMobiledata';
 
-const Allfilter = ({ mobiles }) => {
-
+const Allfilter = () => {
+    const [mobiles] = getMobiledata()
     const {  selectedOS, selectedProcessor, selectedPriceRange, selectedType, selectedmemory, handleMemoryChange, handleOSChange, handlePriceRangeChange, handleProcessorChange, handleTypeChange } = useContext(Contextapi)
     return (
         <div>
             <div className=" md:flex  gap-3 text-center justify-center">
                 {/* filter by processor */}
-                <div className=" rounded-xl shadow-md ">
+                <div className=" mb-1">
                     <select
-                        className="select select-info w-full max-w-xs  "
+                        className="select select-info w-full max-w-xs rounded-xl shadow-md  "
                         value={selectedProcessor}
                         onChange={(e) => handleProcessorChange(e.target.value)}
                     >
                         <option value="">All Processors</option>
                         {Array.from(new Set(mobiles.map((m) => m.processor))).map(
                             (processor) => (
-                                <option className="text-lg font-semibold" key={processor} value={processor}>
+                                <option key={processor} value={processor}>
                                     {processor}
                                 </option>
                             )
@@ -25,9 +26,9 @@ const Allfilter = ({ mobiles }) => {
                     </select>
                 </div>
                 {/* filter by  memory */}
-                <div className='rounded-xl shadow-md'>
+                <div className='mb-1'>
                     <select
-                        className="select select-info w-full max-w-xs"
+                        className="select select-info w-full max-w-xs rounded-xl shadow-md"
                         value={selectedmemory}
                         onChange={(e) => handleMemoryChange(e.target.value)}
                     >
@@ -40,9 +41,9 @@ const Allfilter = ({ mobiles }) => {
                     </select>
                 </div>
                 {/* filter by price */}
-                <div className='rounded-xl shadow-md'>
+                <div className='mb-1'>
                     <select
-                        className="select select-info w-full max-w-xs"
+                        className="select select-info w-full max-w-xs rounded-xl shadow-md"
                         value={selectedPriceRange}
                         onChange={(e) => handlePriceRangeChange(e.target.value)}
                     >
@@ -53,9 +54,9 @@ const Allfilter = ({ mobiles }) => {
                     </select>
                 </div>
                 {/* filter by os */}
-                <div className='rounded-xl shadow-md'>
+                <div className='mb-1'>
                     <select
-                        className="select select-info w-full max-w-xs"
+                        className="select select-info w-full max-w-xs rounded-xl shadow-md"
                         value={selectedOS}
                         onChange={(e) => handleOSChange(e.target.value)}
                     >
@@ -68,9 +69,9 @@ const Allfilter = ({ mobiles }) => {
                     </select>
                 </div>
                 {/* filter by Type */}
-                <div className='rounded-xl shadow-md'>
+                <div className='mb-1'>
                     <select
-                        className="select select-info w-full max-w-xs"
+                        className="select select-info w-full max-w-xs rounded-xl shadow-md"
                         value={selectedType}
                         onChange={(e) => handleTypeChange(e.target.value)}
                     >
