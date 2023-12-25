@@ -1,7 +1,7 @@
 # Mobile store
 
 ## live
-- 
+- https://astounding-heliotrope-0c16d2.netlify.app/
 
 
 ## Prerequisites
