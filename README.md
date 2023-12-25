@@ -1,5 +1,7 @@
 # Mobile store
 
+## live
+- 
 
 
 ## Prerequisites
@@ -25,9 +27,9 @@
    ```bash
    git clone https://github.com/ashraf56/Mobile-store.git 
 
-   cd your-project
+   cd Mobile-store
 
-   npm install   ll
+   npm install   
 
    npm run dev    
 
