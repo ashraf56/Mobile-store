@@ -3,6 +3,8 @@
 ## live
 - https://astounding-heliotrope-0c16d2.netlify.app/
 
+## Video demo
+- https://drive.google.com/file/d/1Ay2ImMMrnBGiUhvVOn-hlZ2VvpbRZ_tZ/view?usp=sharing
 
 ## Prerequisites
 - Node.js 
